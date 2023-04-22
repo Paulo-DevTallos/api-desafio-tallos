@@ -15,4 +15,18 @@ describe('UserService', () => {
   it('should be defined', () => {
     expect(service).toBeDefined();
   });
+
+  it('Should test result of service getHelloUser', () => {
+    const returnUsers = service.create({
+      name: 'teste',
+      email: 'email@example.com',
+      password: '123456',
+    });
+
+    expect(returnUsers).toMatchObject({
+      name: 'teste',
+      email: 'email@example.com',
+      password: '123456',
+    });
+  });
 });
